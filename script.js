@@ -5,7 +5,28 @@ const HomeVue = {
 }
 
 const TabsVue = {
-    template: `<p>Tabs</p>`
+    data() {
+        return {
+            data: null
+        }
+    },
+
+    mounted() {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(res => {return res.json()})
+            .then(res => {
+                this.data = res;
+            })
+    },
+
+    template: `
+        <div class="list">
+            <div class="item" v-for="item in this.data">
+                <div class="title">{{ item.title }}</div>
+                <div class="body">{{ item.body }}</div>
+            </div>
+        </div>
+    `
 }
 
 new HashRouter().addPath('#/tab', () => {

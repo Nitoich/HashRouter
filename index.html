@@ -9,10 +9,46 @@
         <script src="https://unpkg.com/vue@3"></script>
         <script src="HashRouter.js"></script>
         <script src="script.js"></script>
+        <style>
+            .navigation {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            .navigation > * {
+                margin: 0 10px;
+                border: 1px solid #757575;
+                padding: 5px;
+                text-decoration: none;
+            }
+            .navigation > *:hover {
+                background: #757575;
+            }
+            .list {
+                display: flex;
+                flex-direction: column;
+            }
+            .item {
+                border: 2px solid black;
+                padding: 10px;
+                margin: 5px 0;
+            }
+            .title {
+                font-size: 24px;
+                text-transform: uppercase;
+            }
+            .body {
+                font-size: 20px;
+            }
+        </style>
     </head>
     <body>
-        <a href="#/home">Home</a>
-        <a href="#/tab">Tab</a>
+        <div class="navigation">
+            <a href="#/home">Home</a>
+            <a href="#/tab">Tab</a>
+        </div>
         <div id="app"></div>
     </body>
 </html>
