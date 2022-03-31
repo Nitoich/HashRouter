@@ -8,10 +8,10 @@ const TabsVue = {
     template: `<p>Tabs</p>`
 }
 
-new HashRouter().addPath('#tab', () => {
+new HashRouter().addPath('#/tab', () => {
     window.MainVueComponent = Vue.createApp(TabsVue).mount('#app');
 });
 
-new HashRouter().addPath('#home', () => {
+new HashRouter().addPath('#/home', () => {
     window.MainVueComponent = Vue.createApp(HomeVue).mount('#app');
 });
