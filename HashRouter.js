@@ -1,5 +1,5 @@
 class HashRouter {
-    routes = [];
+    #routes = [];
     error = null;
 
     defaultCB = () => {
@@ -41,7 +41,7 @@ class HashRouter {
     }
 
     addPath(path, cb) {
-        this.routes.push({
+        this.#routes.push({
             path: path,
             cb: cb
         });
@@ -58,7 +58,7 @@ class HashRouter {
         }
 
         let finded = false;
-        this.routes.forEach(route => {
+        this.#routes.forEach(route => {
             if(route.path == location) {
                 route.cb();
                 finded = true;
